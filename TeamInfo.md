@@ -6,14 +6,14 @@
 | ----------- | ---------------------- |
 | TeamID      |        Team-028        |
 | TeamName    |       TSFisdevil       |
-| Captain     |       Abdu Alawini     |
-| Captain     |  alawini@illinois.edu  |
-| Member1     |        Kevin Pei       |
-| Member1     |   kevin2@illinois.edu  |
-| Member2     |  Dattatreya Mohapatra  |
+| Captain     |       Matt Malitz      |
+| Captain     | 	mmalit4@illinois.edu |
+| Member1     |        Yixuan Li       |
+| Member1     |  yixuan17@illinois.edu |
+| Member2     |       Aadya Doma       |
 | Member2     |   datta1@illinois.edu  |
-| Member3     |     Ti-Chung Cheng     |
-| Member3     |  tichung3@illinois.edu |
+| Member3     |   Emily Elisabeth Ho   |
+| Member3     |   eeho2@illinois.edu   |
 
 ## Project Information
 
