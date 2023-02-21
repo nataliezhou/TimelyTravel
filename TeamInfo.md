@@ -10,8 +10,10 @@
 | Captain     | 	mmalit4@illinois.edu | |
 | Member1     |       Aadya Doma       |
 | Member1     |   adoma3@illinois.edu  |
-| Member2     |   Emily Elisabeth Ho   |
-| Member2     |   eeho2@illinois.edu   |
+| Member2     |   Natalie Zhou   |
+| Member2     |   nzhou13@illinois.edu   |
+| Member3     |   Arul Verma   |
+| Member3     |   arulhv2@illinois.edu   |
 
 ## Project Information
 
