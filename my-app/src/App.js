@@ -2,8 +2,7 @@ import './App.css';
 import React, {useState, useEffect} from 'react'
 
 function App() {
-  const data = []
-  const [items, setItems] = useState([]);
+  const [data, setData] = useState([])
   const [query, setQuery] = useState("")
 
   useEffect(() => {
@@ -18,7 +17,7 @@ function App() {
     .then(async res => {
       var data2 = await res.json();
       console.log(data2);
-      setItems(data2);
+      setData(data2);
     })
     // .then(res => {
     //   console.log(res);
@@ -102,26 +101,21 @@ return (
 		</tr>
     {
           // TODO(): REPLACE data.filter to items.filter; Changed it for visibility temporarily but items has the correct results
-          data.filter(items => { //TODO(): GET RID OF BUTTONS AND JUST PRINT DATA
-
-           // const x = Object.values(items).map(name => name.toString().toLowerCase())
-           // console.log(x)
-            if (query === '') {
-              return items;
-            } else if (Object.values(items).map(name => name.toString().toLowerCase()).some(
-                it => it.includes(query.toLowerCase()))) 
-            {
-              return items;
-            }
-          }).map((val, key) => {
+          data.map((val) => {
             return (
-              <tr key={key}>
+              <tr>
               <td> <button onClick={editRoute}>Edit Name</button> {val.name} </td>
-              <td>{val.age}</td>
-              <td>{val.gender}</td>
-              </tr>
+              <td>{val.route_id}</td>
+              <td>{val.agency_id}</td>
+              <td>{val.route_short_name}</td>
+              <td>{val.route_long_name}</td>
+              <td>{val.route_type}</td>
+              <td>{val.route_color}</td>
+              <td>{val.route_text_color}</td>
+               </tr>
             )
             })
+
         }
 		
 	</table>

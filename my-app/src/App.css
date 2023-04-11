@@ -11,6 +11,9 @@
   border: 2px solid forestgreen;
   width: 800px;
   height: 200px;
+  overflow:scroll;
+  position:fixed;
+  top: 50px;
   }
   
   th {
@@ -19,6 +22,7 @@
   
   td {
   text-align: center;
+  overflow: auto;
   }
 
   button {
