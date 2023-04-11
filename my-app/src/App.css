@@ -7,13 +7,17 @@
   flex-direction: column;
   }
   
+  .tableContainer {
+    overflow-y: auto;
+    height: 400px;
+  }
+
   table {
   border: 2px solid forestgreen;
   width: 800px;
   height: 200px;
   overflow:scroll;
-  position:fixed;
-  top: 50px;
+  top: 100px;
   }
   
   th {

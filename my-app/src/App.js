@@ -19,9 +19,6 @@ function App() {
       console.log(data2);
       setData(data2);
     })
-    // .then(res => {
-    //   console.log(res);
-    // })
   }, []);
 
   function addRoute(){
@@ -35,19 +32,28 @@ function App() {
       },
       body: JSON.stringify({query: query}),
       cache: 'default'
+    }).then(async res => {
+      var data2 = await res.json();
+      console.log(data2);
+      setData(data2);
     })
   }
 
   function deleteRoute(){
     alert("deleted route");
     /* call backend endpoint to DELETE in table */
-    fetch('http://localhost:4000/deleteroutes + {JSON.stringify({query: query})}', {
-      method: 'DELETE',
+    fetch('http://localhost:4000/deleteroutes', {
+      method: 'POST',
       headers: {
         accept: 'applications.json',
         'Content-Type': 'application/json'
       },
+      body: JSON.stringify({query: query}),
       cache: 'default'
+    }).then(async res => {
+      var data2 = await res.json();
+      console.log(data2);
+      setData(data2);
     })
   }
 
@@ -62,6 +68,10 @@ function App() {
       },
       body: JSON.stringify({query: query}),
       cache: 'default'
+    }).then(async res => {
+      var data2 = await res.json();
+      console.log(data2);
+      setData(data2);
     })
   }
 
@@ -76,6 +86,43 @@ function App() {
       },
       body: JSON.stringify({query: query}),
       cache: 'default'
+    }).then(async res => {
+      var data2 = await res.json();
+      console.log(data2);
+      setData(data2);
+    })
+  }
+
+
+  function aq1(){ // TODO(): fix table for this
+    fetch('http://localhost:4000/aq1', {
+      method: 'POST',
+      headers: {
+        accept: 'applications.json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({query: query}),
+      cache: 'default'
+    }).then(async res => {
+      var data2 = await res.json();
+      console.log(data2);
+      setData(data2);
+    })
+  }
+
+  function aq2(){ // TODO(): fix table for this
+    fetch('http://localhost:4000/aq2', {
+      method: 'POST',
+      headers: {
+        accept: 'applications.json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({query: query}),
+      cache: 'default'
+    }).then(async res => {
+      var data2 = await res.json();
+      console.log(data2);
+      setData(data2);
     })
   }
 
@@ -86,40 +133,44 @@ return (
     <button onClick={deleteRoute}>Delete Route</button>
     <button onClick={editRoute}>Edit Route</button>
     <button onClick={searchRoute}>Search Route</button>
+    <button onClick={aq1}>A. Query 1</button>
+    <button onClick={aq2}>A. Query 2</button>
     
     </div>
     <input placeholder="Search for a route" onChange={event => {console.log(event.target.value); setQuery(event.target.value)}}/>
-	<table>
-		<tr>
-		<th>route_id</th>
-		<th>agency_id</th>
-		<th>route_short_name</th>
-    <th>route_long_name</th>
-    <th>route_type </th>
-    <th>route_color</th>
-    <th>route_text_color</th>
-		</tr>
-    {
-          // TODO(): REPLACE data.filter to items.filter; Changed it for visibility temporarily but items has the correct results
-          data.map((val) => {
-            return (
-              <tr>
-              <td> <button onClick={editRoute}>Edit Name</button> {val.name} </td>
-              <td>{val.route_id}</td>
-              <td>{val.agency_id}</td>
-              <td>{val.route_short_name}</td>
-              <td>{val.route_long_name}</td>
-              <td>{val.route_type}</td>
-              <td>{val.route_color}</td>
-              <td>{val.route_text_color}</td>
-               </tr>
-            )
-            })
+  <div className='tableContainer'>
+    <table>
+      <tr>
+      <th>Edit row</th>
+      <th>route_id</th>
+      <th>agency_id</th>
+      <th>route_short_name</th>
+      <th>route_long_name</th>
+      <th>route_type </th>
+      <th>route_color</th>
+      <th>route_text_color</th>
+      </tr>
+      {
+            data.map((val) => {
+              return (
+                <tr>
+                <td> <button onClick={editRoute}>Edit Name</button> {val.name} </td>
+                <td>{val.route_id}</td>
+                <td>{val.agency_id}</td>
+                <td>{val.route_short_name}</td>
+                <td>{val.route_long_name}</td>
+                <td>{val.route_type}</td>
+                <td>{val.route_color}</td>
+                <td>{val.route_text_color}</td>
+                </tr>
+              )
+              })
 
-        }
-		
-	</table>
-	</div>
+          }
+      
+    </table>
+    </div>
+  </div>
 );
 }
 
