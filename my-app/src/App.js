@@ -126,6 +126,7 @@ function App() {
     })
   }
 
+
 return (
 	<div className="App">
     <div>
@@ -149,23 +150,45 @@ return (
       <th>route_type </th>
       <th>route_color</th>
       <th>route_text_color</th>
+      <th>stop_id</th>
+      <th>trip_id</th>
+      <th>count</th>
       </tr>
       {
             data.map((val) => {
-              return (
-                <tr>
-                <td> <button onClick={editRoute}>Edit Name</button> {val.name} </td>
-                <td>{val.route_id}</td>
-                <td>{val.agency_id}</td>
-                <td>{val.route_short_name}</td>
-                <td>{val.route_long_name}</td>
-                <td>{val.route_type}</td>
-                <td>{val.route_color}</td>
-                <td>{val.route_text_color}</td>
-                </tr>
-              )
-              })
-
+              if(val.hasOwnProperty("route_id"))
+              {
+                return (
+                  <tr>
+                  <td> <button onClick={editRoute}>Edit Name</button> {val.name} </td>
+                  <td>{val.route_id}</td>
+                  <td>{val.agency_id}</td>
+                  <td>{val.route_short_name}</td>
+                  <td>{val.route_long_name}</td>
+                  <td>{val.route_type}</td>
+                  <td>{val.route_color}</td>
+                  <td>{val.route_text_color}</td>
+                  </tr>
+                )
+              }
+              else if(val.hasOwnProperty("trip_id"))
+              {
+                return (
+                  <tr>
+                  <td>{val.trip_id}</td>
+                  </tr>
+                )
+              }
+              else if(val.hasOwnProperty("count"))
+              {
+                return (
+                  <tr>
+                  <td>{val.stop_id}</td>
+                  <td>{val.count}</td>
+                  </tr>
+                )
+              }
+            })
           }
       
     </table>
