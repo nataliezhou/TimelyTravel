@@ -175,6 +175,14 @@ return (
               {
                 return (
                   <tr>
+                  <td> <button onClick={editRoute}>Edit Name</button> {val.name} </td>
+                  <td>{val.route_id}</td>
+                  <td>{val.agency_id}</td>
+                  <td>{val.route_short_name}</td>
+                  <td>{val.route_long_name}</td>
+                  <td>{val.route_type}</td>
+                  <td>{val.route_color}</td>
+                  <td>{val.route_text_color}</td>
                   <td>{val.trip_id}</td>
                   </tr>
                 )
@@ -183,6 +191,15 @@ return (
               {
                 return (
                   <tr>
+                  <td> <button onClick={editRoute}>Edit Name</button> {val.name} </td>
+                  <td>{val.route_id}</td>
+                  <td>{val.agency_id}</td>
+                  <td>{val.route_short_name}</td>
+                  <td>{val.route_long_name}</td>
+                  <td>{val.route_type}</td>
+                  <td>{val.route_color}</td>
+                  <td>{val.route_text_color}</td>
+                  <td>{val.trip_id}</td>
                   <td>{val.stop_id}</td>
                   <td>{val.count}</td>
                   </tr>
