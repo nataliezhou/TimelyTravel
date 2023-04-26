@@ -39,6 +39,24 @@ function App() {
     })
   }
 
+  function procedure() {
+    alert("procedure");
+
+    fetch('http://localhost:4000/procedure', {
+      method: 'POST',
+      headers: {
+        accept: 'applications.json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({query: query}),
+      cache: 'default'
+    }).then(async res => {
+      var data2 = await res.json();
+      console.log(data2);
+      setData(data2);
+    })
+  }
+
   function deleteRoute(){
     alert("deleted route");
     /* call backend endpoint to DELETE in table */
