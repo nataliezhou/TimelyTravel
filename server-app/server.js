@@ -141,3 +141,26 @@ app.post('/aq2', (req,res) => {
         }
     })
 })
+
+
+app.post('/procedure', (req,res) => { //DONE
+    // We can just make sure that our input is always a comma separated list with no spaces and just trim when we press insert
+    var string = "CALL Result"
+    db.query(string ,(err, result) => { 
+        if(err){console.log(err);}
+        else{
+            console.log("arrived");
+            console.log(result);
+            res.send(result);
+
+            // var string2 = 'SELECT * FROM Route1;'
+            // db.query(string2, (err, result) => {
+            //     if(err){console.log(err);}
+            //     else{
+            //         console.log(result);
+            //         res.send(result);
+            //     }
+            // })
+        }
+    })
+})
