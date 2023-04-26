@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react'
 
 function App() {
   const [data, setData] = useState([])
+  const [data1, setData1] = useState([])
   const [query, setQuery] = useState("")
 
   useEffect(() => {
@@ -53,7 +54,7 @@ function App() {
     }).then(async res => {
       var data2 = await res.json();
       console.log(data2);
-      setData(data2);
+      setData1(data2);
     })
   }
 
@@ -220,6 +221,31 @@ return (
                   <td>{val.trip_id}</td>
                   <td>{val.stop_id}</td>
                   <td>{val.count}</td>
+                  </tr>
+                )
+              }
+            })
+          }
+      
+    </table>
+    </div>
+    <button onClick={procedure}>Analyze table procedure</button>
+    <div className='tableContainer'>
+      <table>
+      <tr>
+      <th>Route Id</th>
+      <th>Number of Trips</th>
+      <th>Relative Fare Price</th>
+      </tr>
+      {
+            data1.map((val) => {
+              if(val.hasOwnProperty("route_id"))
+              {
+                return (
+                  <tr>
+                  <td>{val.route_id}</td>
+                  <td>{val.num_trips}</td>
+                  <td>{val.rel_fare_price}</td>
                   </tr>
                 )
               }
