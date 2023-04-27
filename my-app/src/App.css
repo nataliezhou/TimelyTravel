@@ -1,15 +1,17 @@
 .App {
   width: 100%;
   height: 100vh;
+  overflow-y: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 20px;
   }
   
   .tableContainer {
     overflow-y: auto;
-    height: 400px;
+    height: 600px;
   }
 
   table {

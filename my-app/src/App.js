@@ -41,7 +41,7 @@ function App() {
   }
 
   function procedure() {
-    alert("procedure");
+    alert("Called procedure, wait 10 seconds to retrieve result");
 
     fetch('http://localhost:4000/procedure', {
       method: 'POST',
@@ -53,8 +53,8 @@ function App() {
       cache: 'default'
     }).then(async res => {
       var data2 = await res.json();
-      console.log(data2);
-      setData1(data2);
+      console.log(data2[0]);
+      setData1(data2[0]);
     })
   }
 
@@ -229,7 +229,7 @@ return (
       
     </table>
     </div>
-    <button onClick={procedure}>Analyze table procedure</button>
+    <button onClick={procedure}>Analyze routes</button>
     <div className='tableContainer'>
       <table>
       <tr>
@@ -239,13 +239,13 @@ return (
       </tr>
       {
             data1.map((val) => {
-              if(val.hasOwnProperty("route_id"))
+              if(val.hasOwnProperty("RouteId"))
               {
                 return (
                   <tr>
-                  <td>{val.route_id}</td>
-                  <td>{val.num_trips}</td>
-                  <td>{val.rel_fare_price}</td>
+                  <td>{val.RouteId}</td>
+                  <td>{val.NumberOfTrips}</td>
+                  <td>{val.RelativeFarePrice}</td>
                   </tr>
                 )
               }
